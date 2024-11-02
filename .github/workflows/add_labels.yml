@@ -1,0 +1,20 @@
+name: Add Labels
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  add_labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      
+      - name: Add custom labels
+        run: |
+          gh repo set-default <your_username>/<your_repo> --add-label "bug:f00:Something isn't working"
+          gh repo set-default <your_username>/<your_repo> --add-label "enhancement:a2eeef:New feature or request"
+          gh repo set-default <your_username>/<your_repo> --add-label "documentation:0075ca:Issues related to documentation"
+          gh repo set-default <your_username>/<your_repo> --add-label "help wanted:g90:Looking for help on this issue"

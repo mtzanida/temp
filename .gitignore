@@ -1,0 +1,5 @@
+# Ignore the following files and directories
+*.pyc
+__pycache__/
+*.log
+secrets.yaml  # Don't track secrets file
